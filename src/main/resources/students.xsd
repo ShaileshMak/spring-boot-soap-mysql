@@ -1,0 +1,86 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tns="http://www.shailesh.com/mak/soap/api/generated"
+           targetNamespace="http://www.shailesh.com/mak/soap/api/generated"
+           elementFormDefault="qualified">
+
+    <xs:element name="getStudentByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="studentId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="getStudentByIdResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="studentInfo" type="tns:studentInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="studentInfo">
+        <xs:sequence>
+            <xs:element name="studentId" type="xs:long"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="grade" type="xs:string"/>
+            <xs:element name="classTeacher" type="xs:string"/>
+            <xs:element name="schoolName" type="xs:string"/>
+            <xs:element name="schoolDistrict" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="getAllStudentsRequest">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="getAllStudentsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="studentInfo" type="tns:studentInfo" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="addStudentRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="grade" type="xs:string"/>
+                <xs:element name="classTeacher" type="xs:string"/>
+                <xs:element name="schoolName" type="xs:string"/>
+                <xs:element name="schoolDistrict" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="addStudentResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="studentInfo" type="tns:studentInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateStudentRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="studentInfo" type="tns:studentInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="updateStudentResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="studentInfo" type="tns:studentInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteStudentRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="studentId" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="deleteStudentResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="studentInfo" type="tns:studentInfo"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
